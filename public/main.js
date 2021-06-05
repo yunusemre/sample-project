@@ -22,13 +22,13 @@ const Queues = setInterval(() => {
   const messagesLen = messages.length;
 
   if (messagesLen > 0) {
-    const event = messages[Math.floor(Math.random() * messagesLen)];
+    const event = messages.shift();
     const time = olderThan20Seconds(event);
     !time && addMessage(event)
   }
 
   if (giftLen > 0 && !isAnimating) {
-    const event = animatedGifts[Math.floor(Math.random() * giftLen)];
+    const event = animatedGifts.shift();
     animateGift(event);
     addMessage(event);
   }
