@@ -38,5 +38,3 @@ const olderThan20Seconds = (event) => {
   const diff = (Date.now() - new Date(event.timestamp).getTime()) / 1000;
   return diff > 20;
 }
-
-// NOTE: UI helper methods from `dom_updates` are already imported above.
